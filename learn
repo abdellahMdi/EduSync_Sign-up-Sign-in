@@ -1,0 +1,4 @@
+
+php variables
+
+gettype() = to know the type of the the variable (int , Double , array,... )
