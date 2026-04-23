@@ -3,7 +3,7 @@ require "includes/dbh.inc.php";
 ?>
 
 
-// page sign in
+<!-- // page sign in -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@ require "includes/dbh.inc.php";
 
 
 
-// page sign up
+ <!-- page sign up -->
 
 
 
@@ -67,16 +67,13 @@ require "includes/dbh.inc.php";
 <div id="signup-page" class="hidden bg-gradient-to-r from-[#d8810f] to-[#cc380b] mt-[3%] p-[3%]">
     <div class="flex flex-wrap">
         <div class="w-full md:w-1/4 text-center text-white mt-[4%]">
-            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" class="mt-[15%] mb-[5%] w-1/4 mx-auto animate-[mover_1s_infinite_alternate]"/>
-            <h3 class="text-2xl font-bold">Welcome</h3>
-            <p class="font-light px-[12%] -mt-[9%]">You are 30 seconds away from earning your own money!</p>
             <input id="second" type="submit" name="" value="Login" class="border-none rounded-3xl py-[2%] px-[2%] w-3/5 bg-[#f8f9fa] font-bold text-[#b63a29] mt-[30%] mb-[3%] cursor-pointer"/><br/>
         </div>
         
         <div class="w-full md:w-3/4 bg-[#f8f9fa] rounded-tl-[10%_50%] rounded-bl-[10%_50%]">
             <div class="tab-content clear-both" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="text-center mt-[8%] -mb-[15%] text-[#495057] text-2xl">Apply as an Employee</h3>
+                    <h3 class="text-center mt-[8%] -mb-[15%] text-[#495057] text-2xl">SIGN UP as a student</h3>
                     
                     <form action="scripts/authprocess.php" method="POST">
                         <div class="flex flex-wrap p-[10%] mt-[10%]">
@@ -99,10 +96,6 @@ require "includes/dbh.inc.php";
                                 <div class="mb-4">
                                     <input type="email" name="email" class="w-full border border-gray-300 rounded p-2" placeholder="Your Email *" required />
                                 </div>
-                                <div class="mb-4">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="w-full border border-gray-300 rounded p-2" placeholder="Your Phone *" required />
-                                </div>
-                                
                                 <input type="submit" name="singup" class="float-right mt-[10%] border-none rounded-3xl py-[2%] px-[2%] bg-[#b63a29] text-white font-semibold w-1/2 cursor-pointer" value="Register"/>
                             </div>
                         </div>
