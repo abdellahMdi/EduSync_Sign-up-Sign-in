@@ -1,3 +1,12 @@
+<?php 
+   session_start() ;
+   if(!isset($_SESSION['email'])){
+    header('location: ../index.php');
+    exit();
+
+   }
+   $email=$_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome</h1>
+    <h1>Welcome <?php echo $email ;?></h1>
+    <a href="../scripts/logout.php">log out</a>
 </body>
 </html>
