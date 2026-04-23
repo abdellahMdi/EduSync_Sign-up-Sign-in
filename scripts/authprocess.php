@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST["singup"])){
-    require "dbh.inc.php";
+    require "../includes/dbh.inc.php";
 $conn=ConnectionDb();
     $firstName=$_POST["first_name"];
     $lastName=$_POST["last_name"];
@@ -19,6 +19,6 @@ $conn=ConnectionDb();
         exit();   
     }
     addUser($conn,$firstName,$lastName,$password,$email);
-    echo "sucess";
+    header("Location:../public/dashboard.php");
 
 }

@@ -33,3 +33,19 @@ try {
     echo $e->getMessage();
 }
 }
+function connectAcount($conn,$email,$password){
+try {
+    $sql="SELECT * FROM users WHERE email=? and password=?";
+    $stm=$conn->prepare($sql);
+    $stm->execute([$email,$password]);
+    $user=$stm->fetch();
+    if($user){
+        return true;
+    }else{
+        return false;
+    }
+
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
+}
