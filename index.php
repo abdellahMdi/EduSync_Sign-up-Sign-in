@@ -1,3 +1,10 @@
+<?php
+require "includes/dbh.inc.php";
+?>
+
+
+// page sign in
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +25,7 @@
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign in to your account
               </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
+              <form class="space-y-4 md:space-y-6" action="#" method="post">
                   <div class="py-[10px] ">
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -50,9 +57,15 @@
 
 
 
+
+// page sign up
+
+
+
+
+
 <div id="signup-page" class="hidden bg-gradient-to-r from-[#d8810f] to-[#cc380b] mt-[3%] p-[3%]">
     <div class="flex flex-wrap">
-        <!-- Left Column -->
         <div class="w-full md:w-1/4 text-center text-white mt-[4%]">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" class="mt-[15%] mb-[5%] w-1/4 mx-auto animate-[mover_1s_infinite_alternate]"/>
             <h3 class="text-2xl font-bold">Welcome</h3>
@@ -60,41 +73,41 @@
             <input id="second" type="submit" name="" value="Login" class="border-none rounded-3xl py-[2%] px-[2%] w-3/5 bg-[#f8f9fa] font-bold text-[#b63a29] mt-[30%] mb-[3%] cursor-pointer"/><br/>
         </div>
         
-        <!-- Right Column -->
         <div class="w-full md:w-3/4 bg-[#f8f9fa] rounded-tl-[10%_50%] rounded-bl-[10%_50%]">
-            
             <div class="tab-content clear-both" id="myTabContent">
-                <!-- Employee Tab -->
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="text-center mt-[8%] -mb-[15%] text-[#495057] text-2xl">Apply as a Employee</h3>
-                    <div class="flex flex-wrap p-[10%] mt-[10%]">
-                        <div class="w-full md:w-1/2">
-                            <div class="mb-4">
-                                <input type="text" class="w-full border border-gray-300 rounded p-2" placeholder="First Name *" value="" />
+                    <h3 class="text-center mt-[8%] -mb-[15%] text-[#495057] text-2xl">Apply as an Employee</h3>
+                    
+                    <form action="scripts/authprocess.php" method="POST">
+                        <div class="flex flex-wrap p-[10%] mt-[10%]">
+                            <div class="w-full md:w-1/2">
+                                <div class="mb-4">
+                                    <input type="text" name="first_name" class="w-full border border-gray-300 rounded p-2" placeholder="First Name *" required />
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" name="last_name" class="w-full border border-gray-300 rounded p-2" placeholder="Last Name *" required />
+                                </div>
+                                <div class="mb-4">
+                                    <input type="password" name="password" class="w-full border border-gray-300 rounded p-2" placeholder="Password *" required />
+                                </div>
+                                <div class="mb-4">
+                                    <input type="password" name="confirm_password" class="w-full border border-gray-300 rounded p-2" placeholder="Confirm Password *" required />
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <input type="text" class="w-full border border-gray-300 rounded p-2" placeholder="Last Name *" value="" />
+
+                            <div class="w-full md:w-1/2">
+                                <div class="mb-4">
+                                    <input type="email" name="email" class="w-full border border-gray-300 rounded p-2" placeholder="Your Email *" required />
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="w-full border border-gray-300 rounded p-2" placeholder="Your Phone *" required />
+                                </div>
+                                
+                                <input type="submit" name="singup" class="float-right mt-[10%] border-none rounded-3xl py-[2%] px-[2%] bg-[#b63a29] text-white font-semibold w-1/2 cursor-pointer" value="Register"/>
                             </div>
-                            <div class="mb-4">
-                                <input type="password" class="w-full border border-gray-300 rounded p-2" placeholder="Password *" value="" />
-                            </div>
-                            <div class="mb-4">
-                                <input type="password" class="w-full border border-gray-300 rounded p-2" placeholder="Confirm Password *" value="" />
-                            </div>
-                            
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <div class="mb-4">
-                                <input type="email" class="w-full border border-gray-300 rounded p-2" placeholder="Your Email *" value="" />
-                            </div>
-                            <div class="mb-4">
-                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="w-full border border-gray-300 rounded p-2" placeholder="Your Phone *" value="" />
-                            </div>
-                            
-                            <input type="submit" class="float-right mt-[10%] border-none rounded-3xl py-[2%] px-[2%] bg-[#b63a29] text-white font-semibold w-1/2 cursor-pointer" value="Register"/>
-                        </div>
+                    </form>
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -107,6 +120,6 @@
     }
 </style>
 
-    <script src="assets/navigation.js"></script>
+    <script src="public/assets/navigation.js"></script>
 </body>
 </html>

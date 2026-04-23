@@ -15,5 +15,5 @@ function switchPag(page) {
 }
 
 
-sibtn.addEventListener("click", () => switchPag("signup-page"));
-subtn.addEventListener("click", () => switchPag("signin-page"));
+sibtn.addEventListener("click", () => {switchPag("signup-page")});
+subtn.addEventListener("click", () =>{ switchPag("signin-page")});
