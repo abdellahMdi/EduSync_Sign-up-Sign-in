@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST["singup"])){
     require "../includes/dbh.inc.php";
 $conn=ConnectionDb();

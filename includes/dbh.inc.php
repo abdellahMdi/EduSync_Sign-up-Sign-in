@@ -7,5 +7,4 @@ function ConnectionDb(){
         echo $e->getMessage();
     }
 }
-
 ?>
