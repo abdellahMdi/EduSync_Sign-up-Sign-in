@@ -6,6 +6,12 @@
 
    }
    $email=$_SESSION['email'];
+   require "../includes/dbh.inc.php";
+   $connct = ConnectionDb();
+   $sql="SELECT firstname FROM users WHERE email =? ;";
+   $stm=$connct->prepare($sql);
+   $stm->execute([$email]);
+   $nameUser=$stm->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +21,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome <?php echo $email ;?></h1>
+    <h1>Welcome <?php echo $nameUser["firstname"];?></h1>
     <a href="../scripts/logout.php">log out</a>
 </body>
 </html>
